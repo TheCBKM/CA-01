@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>JG&COMPANY</title>
 	<!-- Favicon -->
+	<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+
 	<link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico" />
 	<!-- Font Awesome -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
@@ -953,12 +955,12 @@
 									<div class="col-md-12">
 										<div class="mu-contact-form-area">
 											<div id="form-messages"></div>
-											<form id="ajax-contact" method="post" action="mailer.php"
+											<form onsubmit="submitEnquiry()" id="enquiry-form"  method="post" 
 												class="mu-contact-form">
 
 												<div class="form-group">
 													<span class="fa fa-user mu-contact-icon"></span>
-													<input type="text" class="form-control" placeholder="Name" id="name"
+													<input type="text"  class="form-control" placeholder="Name" id="name"
 														name="name" required>
 												</div>
 
@@ -967,11 +969,10 @@
 													<input type="email" class="form-control" placeholder="Enter Email"
 														id="email" name="email" required>
 												</div>
-
 												<div class="form-group">
-													<span class="fa fa-folder-open-o mu-contact-icon"></span>
-													<input type="text" class="form-control" placeholder="Your Subject"
-														id="subject" name="subject" required>
+													<span class="fa fa-user mu-contact-icon"></span>
+													<input type="number"  class="form-control" placeholder="Contact" id="contact"
+														name="contact" required>
 												</div>
 
 												<div class="form-group">
@@ -1133,7 +1134,9 @@
 	<script type="text/javascript" src="assets/js/counter.js"></script>
 	<!-- Ajax contact form  -->
 	<script type="text/javascript" src="assets/js/app.js"></script>
-
+	<!-- server contact form  -->
+	<script type="text/javascript" src="server/server.js"></script>
+	<script type="text/javascript" src="server/services/enquiryService.js"></script>
 
 	<!-- Custom js -->
 	<script type="text/javascript" src="assets/js/custom.js"></script>
