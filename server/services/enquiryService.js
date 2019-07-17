@@ -34,21 +34,47 @@ function addEnquiry(name, email, contact, message) {
 
 }
 
+function getEnquiry(id) {
+    return new Promise((resolve, reject) => {
+        firebase.database().ref('admin/enquiry/' + id).once('value')
+            .then((snap) => {
+                data = snap.val()
+                resolve(data)
+            })
+            .catch(e => reject(e))
+    })
+}
 
 function getAllEnquiry() {
-    // alert("aatoh")
     return new Promise((resolve, reject) => {
         firebase.database().ref('admin/enquiry/').once('value')
             .then((snap) => {
                 data = snap.val()
                 keys = Object.keys(data)
-                console.log("data")
-                data = keys.map((k) => {
+                console.log(keys)
+                data = keys.map((k,i) => {
+                   data[k].id=k
                     return data[k]
                 })
                 console.log(data)
                 resolve(data)
             })
             .catch(e => reject(e))
+    })
+}
+
+function deleteEnquiry(id) {   
+    return new Promise((resolve,reject)=>{
+        getEnquiry(id)
+        .then(data=>{
+            if(data)
+            firebase.database().ref('admin/enquiry/' + id).remove()
+            .then(()=>{
+             resolve({success:true,data:"enquiry Deleted"})
+            })
+            else
+            reject({success:false,data:"no such enquiry found "})
+ 
+        })
     })
 }

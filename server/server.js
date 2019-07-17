@@ -8,10 +8,11 @@ function submitEnquiry() {
 
 }
 
-function getEnquiry() {
+function getEnq() {
     getAllEnquiry()
         .then(data => {
             tbody = document.getElementById("enquiry-tbody")
+            tbody.innerHTML=""
             data.map((d, i) => {
                 tbody.innerHTML += `<tr>
                 <th scope="row">${i + 1}</th>
@@ -20,6 +21,7 @@ function getEnquiry() {
                 <td>${d.email}</td>
                 <td>${d.message}</td>
                 <td>${d.date.split('T')[0]}</td>
+                <td><button onclick=delEnq("${d.id}")>Delete</button></td>
                 </tr>
                 <tr>`
             })
@@ -29,9 +31,7 @@ function getEnquiry() {
         })
 }
 
-function admLogin(){
-    idadmin = document.getElementById('id-admin').value;
-    passadmin = document.getElementById('pass-admin').value;
-   alert("wer")
-    window.location.href="admin.html"
+function delEnq(id){
+    deleteEnquiry(id);
+    getEnq();
 }

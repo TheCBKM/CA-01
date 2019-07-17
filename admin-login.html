@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+    <script>
+        function admLogin() {
+            // idadmin = document.getElementById('id-admin').value;
+            // passadmin = document.getElementById('pass-admin').value;
+            alert("wer");
+            window.location.href = "admin.html";
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,7 +21,7 @@
 </head>
 
 <body>
-    <form onsubmit="admLogin()" methodd="POST">
+    <form onsubmit="admLogin()">
         <input type="text" id="id-admin">
         <input type="text" id="pass-admin">
         <button type="submit">Login</button>
