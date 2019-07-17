@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script type="text/javascript" src="server/server.js"></script>
+	<script type="text/javascript" src="server/services/blogServices.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>blog-admin</title>
+</head>
+<body>
+    <form >
+        Heading <input id="blog-head" type="text" ><br>
+        Message <textarea id="blog-msg" rows="6" cols="20"></textarea><br>
+        By <input id="blog-by" type="text" ><br>
+        <button onclick="submitBlog()" >Submit</button>
+    </form>
+</body>
+</html>

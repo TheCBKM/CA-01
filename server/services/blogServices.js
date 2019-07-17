@@ -11,29 +11,24 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 
-//service functions
-
-
-function addEnquiry(name, email, contact, message) {
+function addBlog(heading,message,by) {
     return new Promise((resolve, reject) => {
-
-        firebase.database().ref('admin/enquiry/' + Date.now()).set({
-            name: name,
-            email: email,
-            contact: contact,
+        alert('jauga');
+        firebase.database().ref('admin/blog/' + Date.now()).set({
+            heading: heading,
             message: message,
+            by: by, 
             date: new Date().toISOString(),
-            read:false
         })
-            .then(() => resolve({ data: "enquiry Added", success: true }))
-            .catch(() => reject({ data: "Error in adding enquiry", success: false }))
+            .then(() => resolve({ data: "blog Added", success: true }))
+            .catch(() => reject({ data: "Error in adding blog", success: false }))
     })
 
 }
 
-function getEnquiry(id) {
+function getBlog(id) {
     return new Promise((resolve, reject) => {
-        firebase.database().ref('admin/enquiry/' + id).once('value')
+        firebase.database().ref('admin/blog/' + id).once('value')
             .then((snap) => {
                 data = snap.val()
                 resolve(data)
@@ -42,9 +37,9 @@ function getEnquiry(id) {
     })
 }
 
-function getAllEnquiry() {
+function getAllBlog() {
     return new Promise((resolve, reject) => {
-        firebase.database().ref('admin/enquiry/').once('value')
+        firebase.database().ref('admin/blog/').once('value')
             .then((snap) => {
                 data = snap.val()
                 keys = Object.keys(data)
@@ -60,17 +55,17 @@ function getAllEnquiry() {
     })
 }
 
-function deleteEnquiry(id) {   
+function deleteBlog(id) {   
     return new Promise((resolve,reject)=>{
-        getEnquiry(id)
+        getBlog(id)
         .then(data=>{
             if(data)
-            firebase.database().ref('admin/enquiry/' + id).remove()
+            firebase.database().ref('admin/blog/' + id).remove()
             .then(()=>{
-             resolve({success:true,data:"enquiry Deleted"})
+             resolve({success:true,data:"blog Deleted"})
             })
             else
-            reject({success:false,data:"no such enquiry found "})
+            reject({success:false,data:"no such blog found "})
  
         })
     })

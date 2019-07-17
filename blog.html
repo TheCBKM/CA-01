@@ -19,8 +19,10 @@
 	<link href="assets/css/magnific-popup.css" rel="stylesheet">
 	<!-- Skills Circle CSS  -->
 	<link rel="stylesheet" type="text/css" href="https://unpkg.com/circlebars@1.0.3/dist/circle.css">
-
-
+	<!-- Blog Server  -->
+	<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script type="text/javascript" src="server/server.js"></script>
+	<script type="text/javascript" src="server/services/blogServices.js"></script>
 	<!-- Main Style -->
 	<link href="style.css" rel="stylesheet">
 
@@ -34,7 +36,7 @@
 	<link href="assets/css/card.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="getBg()">
 
 	<!--START SCROLL TOP BUTTON -->
 	<a class="scrollToTop" href="#">
@@ -124,7 +126,7 @@
 					<div class="col-md-12">
 						<div class="mu-blog-area">
 							<!-- Title -->
-							<div class="row ">
+							<div class="row" id="blog-row" >
 
 								<div class="fancy-cards md-4">
 
@@ -144,114 +146,7 @@
 										<div class="bottom"></div>
 									</div>
 								</div>
-								<div class="fancy-cards md-4">
-
-									<div class="fancy-card">
-										<div class="top">
-											<div style="padding-top:10px; color:rgb(247, 243, 242);">Lorem ipsum dolor
-												sit amet, consectetuer adipiscing elit. Aenean commodo
-												ligula eget dolor. Aenean massa cum sociis.ligula eget dolor. Aenean
-												massa cum sociisligula eget dolor. Aenean massa cum sociisligula eget
-												dolor. Aenean massa cum sociis</div>
-											<div class="caption">
-												<h3 class="title">Beautiful Summer</h3>
-												<a href="" class="button">Read More </a>
-											</div>
-										</div>
-										<div class="middle"></div>
-										<div class="bottom"></div>
-									</div>
-								</div>
-								<div class="fancy-cards md-4">
-
-									<div class="fancy-card">
-										<div class="top">
-											<div style="padding-top:10px; color:rgb(247, 243, 242);">Lorem ipsum dolor
-												sit amet, consectetuer adipiscing elit. Aenean commodo
-												ligula eget dolor. Aenean massa cum sociis.ligula eget dolor. Aenean
-												massa cum sociisligula eget dolor. Aenean massa cum sociisligula eget
-												dolor. Aenean massa cum sociis</div>
-											<div class="caption">
-												<h3 class="title">Beautiful Summer</h3>
-												<a href="" class="button">Read More </a>
-											</div>
-										</div>
-										<div class="middle"></div>
-										<div class="bottom"></div>
-									</div>
-								</div>
-								<div class="fancy-cards md-4">
-
-									<div class="fancy-card">
-										<div class="top">
-											<div style="padding-top:10px; color:rgb(247, 243, 242);">Lorem ipsum dolor
-												sit amet, consectetuer adipiscing elit. Aenean commodo
-												ligula eget dolor. Aenean massa cum sociis.ligula eget dolor. Aenean
-												massa cum sociisligula eget dolor. Aenean massa cum sociisligula eget
-												dolor. Aenean massa cum sociis</div>
-											<div class="caption">
-												<h3 class="title">Beautiful Summer</h3>
-												<a href="" class="button">Read More </a>
-											</div>
-										</div>
-										<div class="middle"></div>
-										<div class="bottom"></div>
-									</div>
-								</div>
-								<div class="fancy-cards md-4">
-
-									<div class="fancy-card">
-										<div class="top">
-											<div style="padding-top:10px; color:rgb(247, 243, 242);">Lorem ipsum dolor
-												sit amet, consectetuer adipiscing elit. Aenean commodo
-												ligula eget dolor. Aenean massa cum sociis.ligula eget dolor. Aenean
-												massa cum sociisligula eget dolor. Aenean massa cum sociisligula eget
-												dolor. Aenean massa cum sociis</div>
-											<div class="caption">
-												<h3 class="title">Beautiful Summer</h3>
-												<a href="" class="button">Read More </a>
-											</div>
-										</div>
-										<div class="middle"></div>
-										<div class="bottom"></div>
-									</div>
-								</div>
-								<div class="fancy-cards md-4">
-
-									<div class="fancy-card">
-										<div class="top">
-											<div style="padding-top:10px; color:rgb(247, 243, 242);">Lorem ipsum dolor
-												sit amet, consectetuer adipiscing elit. Aenean commodo
-												ligula eget dolor. Aenean massa cum sociis.ligula eget dolor. Aenean
-												massa cum sociisligula eget dolor. Aenean massa cum sociisligula eget
-												dolor. Aenean massa cum sociis</div>
-											<div class="caption">
-												<h3 class="title">Beautiful Summer</h3>
-												<a href="" class="button">Read More </a>
-											</div>
-										</div>
-										<div class="middle"></div>
-										<div class="bottom"></div>
-									</div>
-								</div>
-								<div class="fancy-cards md-4">
-
-									<div class="fancy-card">
-										<div class="top">
-											<div style="padding-top:10px; color:rgb(247, 243, 242);">Lorem ipsum dolor
-												sit amet, consectetuer adipiscing elit. Aenean commodo
-												ligula eget dolor. Aenean massa cum sociis.ligula eget dolor. Aenean
-												massa cum sociisligula eget dolor. Aenean massa cum sociisligula eget
-												dolor. Aenean massa cum sociis</div>
-											<div class="caption">
-												<h3 class="title">Beautiful Summer</h3>
-												<a href="" class="button">Read More </a>
-											</div>
-										</div>
-										<div class="middle"></div>
-										<div class="bottom"></div>
-									</div>
-								</div>
+								
 
 							</div>
 
