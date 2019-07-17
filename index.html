@@ -955,7 +955,8 @@
 									<div class="col-md-12">
 										<div class="mu-contact-form-area">
 											<div id="form-messages"></div>
-											<form  class="mu-contact-form">
+											<form  onsubmit="submitEnquiry()" id="enquiry-form"   
+												class="mu-contact-form">
 
 												<div class="form-group">
 													<span class="fa fa-user mu-contact-icon"></span>
@@ -979,7 +980,7 @@
 													<textarea class="form-control" placeholder="Message" id="message"
 														name="message" required></textarea>
 												</div>
-												<button onclick="submitEnquiry()" ><span>Send
+												<button type="submit" class="mu-send-msg-btn"><span>Send
 														Message</span></button>
 											</form>
 										</div>
