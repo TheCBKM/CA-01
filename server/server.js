@@ -4,6 +4,7 @@ function submitEnquiry() {
     message = document.getElementById('message').value;
     contact = document.getElementById('contact').value;
     addEnquiry(name, email, message, contact)
+    window.location.reload();
 
 }
 

@@ -36,6 +36,7 @@ function addEnquiry(name, email, contact, message) {
 
 
 function getAllEnquiry() {
+    // alert("aatoh")
     return new Promise((resolve, reject) => {
         firebase.database().ref('admin/enquiry/').once('value')
             .then((snap) => {
