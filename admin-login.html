@@ -2,9 +2,9 @@
 <html lang="en">
 <script>
     function adminLogin() {
-        var idadmin = document.getElementById("id-admin")
-        var passadmin = document.getElementById("pass-admin")
-        if(idadmin=="123456"&&passadmin=="123456"){
+        var idadmin = document.getElementById("id-admin").value
+        var passadmin = document.getElementById("pass-admin").value
+        if(idadmin==="123456"&&passadmin==="123456"){
             localStorage.setItem("log", "yes");
         window.location.href = "admin.html"
         }
