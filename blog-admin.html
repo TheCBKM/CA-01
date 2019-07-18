@@ -1,5 +1,16 @@
 <html lang="en">
 <head>
+    <script>
+        function load() {
+            if (localStorage.getItem("log") === "yes") {
+                
+            }
+            else{
+                window.location.href="admin-login.html"
+            }
+        }
+
+        </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
@@ -8,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>blog-admin</title>
 </head>
-<body>
+<body onload="load()">
     <form >
         Heading <input id="blog-head" type="text" ><br>
         Message <textarea id="blog-msg" rows="6" cols="20"></textarea><br>

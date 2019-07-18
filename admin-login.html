@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    function adminLogin() {
+        var idadmin = document.getElementById("id-admin")
+        var passadmin = document.getElementById("pass-admin")
+        if(idadmin=="123456"&&passadmin=="123456"){
+            localStorage.setItem("log", "yes");
+        window.location.href = "admin.html"
+        }
+        else{
+            alert("wrong details")
+        }
+       
+    }
+</script>
 
 <head>
     <script>
@@ -21,11 +35,11 @@
 </head>
 
 <body>
-    <form onsubmit="admLogin()">
-        <input type="text" id="id-admin">
-        <input type="text" id="pass-admin">
-        <button type="submit">Login</button>
-    </form>
+
+    <input type="text" id="id-admin">
+    <input type="text" id="pass-admin">
+    <button onclick="adminLogin()">Login</button>
+
 </body>
 
 </html>

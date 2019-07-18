@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+    <script>
+        function load() {
+            if (localStorage.getItem("log") === "yes") {
+                getEnq()
+            }
+            else{
+                window.location.href="admin-login.html"
+            }
+        }
+
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,8 +27,8 @@
     <title>JG-Admin</title>
 </head>
 
-<body onload="getEnq()" >
-    <section >
+<body onload="load()">
+    <section>
         <table class="table table-striped">
             <thead>
                 <tr>
