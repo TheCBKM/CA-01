@@ -1,26 +1,24 @@
+<!doctype html>
 <html lang="en">
-<head>
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-    <script type="text/javascript" src="server/server.js"></script>
-	<script type="text/javascript" src="server/services/blogService.js"></script>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Bootstrap CSS -->
+<head>
+        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+    <script type="text/javascript" src="server/server.js"></script>
+    <script type="text/javascript" src="server/services/enquiryService.js"></script>
     
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+   
 
-    <title>blog-admin</title>
+    <title>JG-Admin</title>
 </head>
-<body onload="verify(2)">
+
+<body onload="verify(1)">
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">ADMIN</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,10 +27,10 @@
               
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                      <a class="nav-link" href="enquiry-admin.html">Enquiries<span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item active">
+                      <a class="nav-link" href="#">Enquiries<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="blog-admin.html">Add Blog</a>
                     </li>
                     <li class="nav-item">
@@ -46,14 +44,28 @@
     
                 </div>
               </nav>
-    <form >
-        Heading <input id="blog-head" type="text" ><br>
-        Message <textarea id="blog-msg" rows="6" cols="20"></textarea><br>
-        By <input id="blog-by" type="text" ><br>
-        <button onclick="submitBlog()" >Submit</button>
-    </form>
+    
 
-      <!-- Optional JavaScript -->
+    <section>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">message</th>
+                    <th scope="col">date</th>
+                </tr>
+            </thead>
+            <tbody id="enquiry-tbody">
+
+            </tbody>
+        </table>
+    </section>
+
+
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -65,4 +77,5 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

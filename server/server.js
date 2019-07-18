@@ -31,9 +31,36 @@ function getEnq() {
         })
 }
 
+function getBlg() {
+    getAllBlog()
+        .then(data => {
+            tbody = document.getElementById("blog-tbody")
+            tbody.innerHTML = ""
+            data.map((d, i) => {
+                tbody.innerHTML += `<tr>
+                <th scope="row">${i + 1}</th>
+                <td>${d.heading}</td>
+                <td><button onclick=editBlg("${d.id}")>Edit</button></td>
+                <td><button onclick=delBlg("${d.id}")>Delete</button></td>
+                <td>${d.date.split('T')[0]}</td>
+                </tr>
+                <tr>`
+            })
+        })
+        .catch(e => {
+            alert(e)
+        })
+}
+
 function delEnq(id) {
     deleteEnquiry(id);
     getEnq();
+}
+
+function delBlg(id) {
+    alert('delete');
+    deleteBlog(id);
+    getBlg();
 }
 
 
@@ -99,4 +126,71 @@ function getBg() {
         .catch(e => {
             alert(e)
         })
+}
+
+
+function logout(){
+    alert('logout');
+    localStorage.removeItem('log');
+    window.location.reload();
+}
+
+function verify(n) {
+    if (localStorage.getItem("log") === "yes") {
+        if(n==1)
+            getEnq();
+        else if(n==3)
+            getBlg();
+        else if(n==4)
+            updateBlg();
+        
+    }
+    else{
+        window.location.href="admin-login.html"
+    }
+}
+
+function adminLogin() {
+    var idadmin = document.getElementById("id-admin").value
+    var passadmin = document.getElementById("pass-admin").value
+    if(idadmin==="123456"&&passadmin==="123456"){
+        localStorage.setItem("log", "yes");
+    window.location.href = "enquiry-admin.html"
+    }
+    else{
+        alert("wrong details")
+    }
+   
+}
+
+function editBlg(id){
+    window.location.href = 'editblog-admin.html?id='+id;
+}
+
+function updateBlg(){
+    qrStr = window.location.search;
+    id=qrStr.split("=")[1];
+    alert(id);
+    getBlog(id).then(data=>{
+        console.log(data);
+        document.getElementById('blogedit-heading').value = data.heading;
+        document.getElementById('blogedit-message').value = data.message;
+        document.getElementById('blogedit-by').value = data.by;
+
+    }).catch(e=>{
+        alert(e);
+    })
+}
+
+function submitEditBlog(){
+    qrStr = window.location.search;
+    id=qrStr.split("=")[1];
+    message = document.getElementById('blogedit-message').value;
+    heading = document.getElementById('blogedit-heading').value;
+    by = document.getElementById('blogedit-by').value;
+
+    alert(id+'=='+message+'=='+by+'=='+heading);
+    updateBlog(id,heading,message,by);
+    window.location.href='blogview-admin.html';
+
 }

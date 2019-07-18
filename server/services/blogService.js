@@ -13,7 +13,7 @@ const database = firebase.database();
 
 function addBlog(heading,message,by) {
     return new Promise((resolve, reject) => {
-        alert('jauga');
+        alert(heading+'---'+message+'---'+by);
         firebase.database().ref('admin/blog/' + Date.now()).set({
             heading: heading,
             message: message,
@@ -69,4 +69,35 @@ function deleteBlog(id) {
  
         })
     })
+}
+
+function deleteBlog(id) {   
+    return new Promise((resolve,reject)=>{
+        getBlog(id)
+        .then(data=>{
+            if(data)
+            firebase.database().ref('admin/blog/' + id).remove()
+            .then(()=>{
+             resolve({success:true,data:"enquiry Deleted"})
+            })
+            else
+            reject({success:false,data:"no such enquiry found "})
+ 
+        })
+    })
+}
+
+function updateBlog(id,heading,message,by) {
+    return new Promise((resolve, reject) => {
+        alert('update hauga');
+        firebase.database().ref('admin/blog/' + id).set({
+            heading: heading,
+            message: message,
+            by: by, 
+            date: new Date().toISOString(),
+        })
+            .then(() => resolve({ data: "blog Updated", success: true }))
+            .catch(() => reject({ data: "Error in updating blog", success: false }))
+    })
+
 }
