@@ -20,7 +20,7 @@
 
     <title>blog-admin</title>
 </head>
-<body onload="verify(2)">
+<body class="bg-dark" onload="verify(2)">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">ADMIN</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,12 +46,31 @@
     
                 </div>
               </nav>
-    <form >
+              <center><h1 style="color: floralwhite" class="display-4">Enter Blog</h1></center>
+              <form>
+                <div class="form-group">
+                  <label style="color: rgb(231, 217, 15); font-size:20px" for="exampleFormControlInput1">Heading</label>
+                  <input type="text" class="form-control" id="blog-head" placeholder="Blog Title">
+                </div>
+            <div class="form-group">
+                  <label style="color: rgb(231, 217, 15); font-size:20px" for="exampleFormControlTextarea1">Message</label>
+                  <textarea class="form-control" id="blog-msg" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label style="color: rgb(231, 217, 15); font-size:20px" for="exampleFormControlInput1">Author</label>
+                  <input type="text" class="form-control" id="blog-by" placeholder="Author">
+                </div>
+                <button type="submit" onclick="submitBlog()" class="btn btn-success">Submit</button>
+              </form>
+              
+
+
+    <!-- <form >
         Heading <input id="blog-head" type="text" ><br>
         Message <textarea id="blog-msg" rows="6" cols="20"></textarea><br>
         By <input id="blog-by" type="text" ><br>
         <button onclick="submitBlog()" >Submit</button>
-    </form>
+    </form> -->
 
       <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

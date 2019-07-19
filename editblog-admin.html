@@ -17,7 +17,7 @@
     <title>Document</title>
 </head>
 
-<body onload="verify(4)">
+<body class="bg-dark" onload="verify(4)">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">ADMIN</a>
@@ -45,12 +45,28 @@
 
         </div>
     </nav>
+    <center><h1 style="color: floralwhite" class="display-4">Update Blog</h1></center>
 
+    <form>
+        <div class="form-group">
+          <label style="color: rgb(231, 217, 15); font-size:20px" for="exampleFormControlInput1">Heading</label>
+          <input type="text"  class="form-control" id="blogedit-heading" placeholder="Blog Title">
+        </div>
+    <div class="form-group">
+          <label style="color: rgb(231, 217, 15); font-size:20px" for="exampleFormControlTextarea1">Message</label>
+          <textarea id="blogedit-message" class="form-control" id="blogedit-message" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label style="color: rgb(231, 217, 15); font-size:20px" for="exampleFormControlInput1">Author</label>
+          <input type="text" class="form-control" id="blogedit-by" placeholder="Author">
+        </div>
+        <button onclick="submitEditBlog()" class="btn btn-success">Update</button>
+      </form>
 
-    <input type="text" id="blogedit-heading">
+    <!-- <input type="text" id="blogedit-heading">
     <textarea name="" id="blogedit-message" id="" cols="30" rows="10"></textarea>
     <input type="text" id="blogedit-by">
-    <button onclick="submitEditBlog()">Update</button>
+    <button onclick="submitEditBlog()">Update</button> -->
 
 
     <!-- Optional JavaScript -->
