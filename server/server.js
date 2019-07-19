@@ -88,7 +88,7 @@ function getBg() {
                 rbody.innerHTML += `<div class="fancy-cards md-4">
             <div class="fancy-card">
                 <div class="top">
-                    <div style="padding-top:10px; color:rgb(247, 243, 242);">${tmsg}</div>
+                    <div style="padding-top:10px; white-space:pre-line; color:rgb(247, 243, 242);">${tmsg}</div>
                     <div class="caption">
                         <h3 class="title">${d.heading}</h3>
                         <button  class="button" data-toggle="modal" data-target="#example${d.id}">Read More </button>
@@ -111,7 +111,7 @@ function getBg() {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="white-space:pre-line" >
         ${d.message}
       </div>
       <div class="modal-footer">
