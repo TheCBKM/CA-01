@@ -55,6 +55,7 @@ function getBlg() {
 function delEnq(id) {
     deleteEnquiry(id);
     getEnq();
+    
 }
 
 function delBlg(id) {

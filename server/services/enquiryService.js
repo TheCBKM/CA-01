@@ -43,6 +43,8 @@ function getEnquiry(id) {
 }
 
 function getAllEnquiry() {
+    firebase.initializeApp(firebaseConfig);
+
     return new Promise((resolve, reject) => {
         firebase.database().ref('admin/enquiry/').once('value')
             .then((snap) => {
