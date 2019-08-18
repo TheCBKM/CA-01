@@ -154,7 +154,7 @@ function verify(n) {
 function adminLogin() {
     var idadmin = document.getElementById("id-admin").value
     var passadmin = document.getElementById("pass-admin").value
-    if(idadmin==="123456"&&passadmin==="123456"){
+    if(idadmin==="jgadmin"&&passadmin==="gautam@1234"){
         localStorage.setItem("log", "yes");
     window.location.href = "enquiry-admin.html"
     }
