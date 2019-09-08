@@ -248,16 +248,16 @@
 										</div>
 									</li>
 									<li class="media">
-											<span class="fa fa-home"></span>
-											<div class="media-body"><b>Current Address</b><br>
-												<p>102, Manas Bhavan Main, 11 RNT Marg, Indore.</p>
-											</div>
-										</li>
+										<span class="fa fa-home"></span>
+										<div class="media-body"><b>Current Address</b><br>
+											<p>102, Manas Bhavan Main, 11 RNT Marg, Indore.</p>
+										</div>
+									</li>
 									<li class="media">
 										<span class="fa fa-phone"></span>
 										<div class="media-body">
 											<p>+91 9479555455</p>
-											
+	
 	
 										</div>
 									</li>
@@ -265,19 +265,36 @@
 										<span class="fa fa-envelope"></span>
 										<div class="media-body">
 											<p> jaingautamandcompany@gmail.com</p><br>
-											
+	
 	
 										</div>
 									</li>
 									<li class="media">
-											<span class="fa fa-refresh"></span>
-											<div class="media-body">
-												<p>Updated upto : 17/08/2019</p>
-												
-		
-											</div>
-										</li>
-									
+										<span class="fa fa-refresh"></span>
+										<div class="media-body">
+											<p>Updated upto :
+												<div id="DATE"></div>
+												<script>
+													var today = new Date();
+													var dd = today.getDate();
+													var mm = today.getMonth() + 1; //January is 0!
+	
+													var yyyy = today.getFullYear();
+													if (dd < 10) {
+														dd = '0' + dd;
+													}
+													if (mm < 10) {
+														mm = '0' + mm;
+													}
+													var today = dd + '/' + mm + '/' + yyyy;
+													document.getElementById('DATE').innerHTML = today;
+												</script>
+											</p>
+	
+	
+										</div>
+									</li>
+	
 								</ul>
 							</div>
 						</div>

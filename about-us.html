@@ -136,7 +136,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="mu-title">
-										<h2>Who we are</h2>
+										<h2 style="color: #6fa454">Who we are</h2>
 										<!-- <p>JG & Co. is a well-known mid size firm of Chartered Accountants in Central
 											India. The
 											Firm has a candid background and excellent collective experience of its
@@ -161,11 +161,12 @@
 										<img class=""
 											src="assets/images/jgsir.png"
 											alt="img">
-											<br><a href="#">C.A. Gautam Jain</a><br><br>
+											<br><a style="color: #023d5f"href="#">C.A. Gautam Jain<br></a><a href="https://twitter.com/gautamjain123?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+											&nbsp;<a href="https://www.linkedin.com/in/gautam-jain-7b0b2211" ><i class="fa fa-linkedin" aria-hidden="true"></i></a><br><br>
 											<img style="width: 80%" class=""
 											src="assets/images/laptop.jpg"
 											alt="img">
-											<br><a href="#">Team</a>
+											<br><a style="color: #023d5f" href="#">A team of 10 qualified  professionals</a>
 									</div>
 									
 											
@@ -183,7 +184,7 @@
 											</li> -->
 											
 											<li>
-												<h3>Leadership</h3>
+												<h3 style="color: #6fa454">Leadership</h3>
 												<p>CA Gautam Jain  qualified Chartered Accountant and law Graduate 
 from Mumbai University. 
 Gautam is an Ex- Price Waterhouse Coooper’s , Mumbai.</p>
@@ -191,7 +192,7 @@ Gautam is an Ex- Price Waterhouse Coooper’s , Mumbai.</p>
 		He is now shifted his base at Indore and  has his own CA Firm JG & Company . He is one of few of renowned Ind AS Experts and has successfully converged Ind AS financials for more than 12 companies both in Indore and Mumbai.</p>
 											</li>
 											<li>
-												<h3>Our Mission & Vision</h3>
+												<h3 style="color: #6fa454">Our Mission & Vision</h3>
 												<p>Is to provide world class services to our clients and build long term relationships. <br>
 													Best adoption of practices and maintary highest standards of professionalism and
 													Uphold the highest standards of professionalism, creativity and
@@ -306,16 +307,16 @@ Gautam is an Ex- Price Waterhouse Coooper’s , Mumbai.</p>
 										</div>
 									</li>
 									<li class="media">
-											<span class="fa fa-home"></span>
-											<div class="media-body"><b>Current Address</b><br>
-												<p>102, Manas Bhavan Main, 11 RNT Marg, Indore.</p>
-											</div>
-										</li>
+										<span class="fa fa-home"></span>
+										<div class="media-body"><b>Current Address</b><br>
+											<p>102, Manas Bhavan Main, 11 RNT Marg, Indore.</p>
+										</div>
+									</li>
 									<li class="media">
 										<span class="fa fa-phone"></span>
 										<div class="media-body">
 											<p>+91 9479555455</p>
-											
+	
 	
 										</div>
 									</li>
@@ -323,19 +324,36 @@ Gautam is an Ex- Price Waterhouse Coooper’s , Mumbai.</p>
 										<span class="fa fa-envelope"></span>
 										<div class="media-body">
 											<p> jaingautamandcompany@gmail.com</p><br>
-											
+	
 	
 										</div>
 									</li>
 									<li class="media">
-											<span class="fa fa-refresh"></span>
-											<div class="media-body">
-												<p>Updated upto : 17/08/2019</p>
-												
-		
-											</div>
-										</li>
-									
+										<span class="fa fa-refresh"></span>
+										<div class="media-body">
+											<p>Updated upto :
+												<div id="DATE"></div>
+												<script>
+													var today = new Date();
+													var dd = today.getDate();
+													var mm = today.getMonth() + 1; //January is 0!
+	
+													var yyyy = today.getFullYear();
+													if (dd < 10) {
+														dd = '0' + dd;
+													}
+													if (mm < 10) {
+														mm = '0' + mm;
+													}
+													var today = dd + '/' + mm + '/' + yyyy;
+													document.getElementById('DATE').innerHTML = today;
+												</script>
+											</p>
+	
+	
+										</div>
+									</li>
+	
 								</ul>
 							</div>
 						</div>
