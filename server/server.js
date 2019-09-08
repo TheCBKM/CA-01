@@ -8,6 +8,9 @@ function submitEnquiry() {
 
 }
 
+
+
+
 function getEnq() {
     getAllEnquiry()
         .then(data => {
