@@ -399,7 +399,7 @@
 								<div class="mu-portfolio-filter-area">
 									<ul class="mu-simplefilter">
 										<!-- <li class="active" data-filter="all">All<span>/</span></li> -->
-										<li data-filter="1" style="color: #6fa454" class="active">Media<span>/</span> </li>
+										<li data-filter="1" id="click1" style="color: #6fa454" class="active">Awards & Accolades<span>/</span> </li>
 										<li data-filter="2" style="color: #6fa454">JG and Co - Team Offsite 2019</li>
 										<!-- <li data-filter="3">E-commerces<span>/</span></li>
 										<li data-filter="4"> Arts<span>/</span> </li>
@@ -1152,6 +1152,11 @@
 												}
 												var today = dd + '/' + mm + '/' + yyyy;
 												document.getElementById('DATE').innerHTML = today;
+												setTimeout(()=>{
+													document.getElementById("click1").click()
+console.log("click")
+												},100)
+												
 											</script>
 										</p>
 
@@ -1243,7 +1248,7 @@
 			type: "progress",
 			maxValue: "74"
 		});
-
+		
 	</script>
 
 </body>
