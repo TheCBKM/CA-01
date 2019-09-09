@@ -17,13 +17,13 @@ function submitCarrier() {
     email = document.getElementById('email').value;
     contact = document.getElementById('contact').value;
     fileButton = document.getElementById('file');
-    var blob = file.files[0].slice(0, fileButton.files[0].size, 'image/png');
+    // var blob = file.files[0].slice(0, fileButton.files[0].size, 'image/png');
     if (name && email && contact && fileButton) {
         file = fileButton.files[0];
         ext = file.name.split('.')[file.name.split('.').length - 1]
-        newFile = new File([blob], `${Date.now()}.${ext}`, { type: 'image/png' });
-        var storageRef = firebase.storage().ref('JG/' + newFile.name);
-        storageRef.put(newFile).then(function (snapshot) {
+        // newFile = new File([blob], , { type: 'image/png' });
+        var storageRef = firebase.storage().ref('JG/' + `${Date.now()}.${ext}`);
+        storageRef.put(file).then(function (snapshot) {
             addCarrier(name, email, contact, newFile.name)
             alert("Thank you for Submiting")
             window.location.reload()
