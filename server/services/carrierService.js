@@ -59,6 +59,49 @@ function addCarrier(name, email, contact, fname) {
 
 }
 
+function getAllCarrier() {
+   // firebase.initializeApp(firebaseConfig);
+
+    return new Promise((resolve, reject) => {
+        firebase.database().ref('admin/carrier/').once('value')
+            .then((snap) => {
+                data = snap.val()
+                keys = Object.keys(data)
+                console.log(keys)
+                data = keys.map((k,i) => {
+                   data[k].id=k
+                    return data[k]
+                })
+                console.log(data)
+                resolve(data)
+            })
+            .catch(e => reject(e))
+    })
+}
+
+function getCar() {
+    getAllCarrier()
+        .then(data => {
+            tbody = document.getElementById("enquiry-tbody")
+            tbody.innerHTML = ""
+            data.map((d, i) => {
+                tbody.innerHTML += `<tr>
+                <th scope="row">${i + 1}</th>
+                <td>${d.name}</td>
+                <td>${d.contact}</td>
+                <td>${d.email}</td>
+                <td><button class="btn btn-primary" onclick=download("${d.fname}")>Check</button></td>
+                <td>${d.date.split('T')[0]}</td>
+                
+                </tr>
+                <tr>`
+            })
+        })
+        .catch(e => {
+            alert(e)
+        })
+}
+
 function delt(file) {
     // Create a reference to the file to delete
     var storageRef = firebase.storage().ref('JG');
@@ -85,6 +128,7 @@ function download(file) {
     // Get the download URL
     starsRef.getDownloadURL().then(function (url) {
         console.log(url)
+        window.location.href=url;
         // Insert url into an <img> tag to "download"
     }).catch(function (error) {
 

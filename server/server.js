@@ -147,6 +147,8 @@ function verify(n) {
             getBlg();
         else if(n==4)
             updateBlg();
+        else if(n==2)
+            alert('apply method');
         
     }
     else{
