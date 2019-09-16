@@ -140,6 +140,7 @@ function logout(){
 }
 
 function verify(n) {
+    
     if (localStorage.getItem("log") === "yes") {
         if(n==1)
             getEnq();
@@ -147,8 +148,8 @@ function verify(n) {
             getBlg();
         else if(n==4)
             updateBlg();
-        else if(n==2)
-            alert('apply method');
+        else if(n==5)
+            getCar();
         
     }
     else{
