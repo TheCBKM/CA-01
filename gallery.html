@@ -12,6 +12,35 @@
 		gtag('config', 'UA-147969626-1');
 	</script>
 
+	<style>
+		.lds-dual-ring {
+			display: inline-block;
+			width: 64px;
+			height: 64px;
+		}
+
+		.lds-dual-ring:after {
+			content: " ";
+			display: block;
+			width: 46px;
+			height: 46px;
+			margin: 1px;
+			border-radius: 50%;
+			border: 5px solid #fff;
+			border-color: #fff transparent #fff transparent;
+			animation: lds-dual-ring 1.2s linear infinite;
+		}
+
+		@keyframes lds-dual-ring {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,10 +60,10 @@
 	<link rel="stylesheet" type="text/css" href="https://unpkg.com/circlebars@1.0.3/dist/circle.css">
 	<!-- Blog Server  -->
 	<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-	<script type="text/javascript" src="server/server.js"></script>
-	<script type="text/javascript" src="server/services/blogService.js"></script>
+
 	<!-- Main Style -->
 	<link href="style.css" rel="stylesheet">
+
 
 	<!-- Fonts -->
 
@@ -46,7 +75,8 @@
 	<link href="assets/css/card.css" rel="stylesheet">
 </head>
 
-<body onload="getBg()">
+
+<body>
 
 	<!--START SCROLL TOP BUTTON -->
 	<a class="scrollToTop" href="#">
@@ -79,9 +109,9 @@
 							<a href="index.html">Home</a>
 						</li>
 
-						<li class="nav-item"><a href="services.html">Services</a></li>
-						<li class="nav-item"><a href="gallery.html">Gallery</a></li>
-						<li class="nav-item active"><a href="blog.html">Professional Update</a></li>
+						<li class="nav-item "><a href="services.html">Services</a></li>
+						<li class="nav-item active"><a href="gallery.html">Gallery</a></li>
+						<li class="nav-item"><a href="blog.html">Professional Update</a></li>
 						<li class="nav-item"><a href="carrier.html">Career</a></li>
 						<!-- <li class="nav-item active">
 				        <a class="dropdown-toggle" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -111,12 +141,14 @@
 	<!-- End Header -->
 
 	<!-- Start Page Header area -->
-	<div id="mu-page-header">
+	<div id="mu-page-header" style="background-image: url(assets/images/laptop.jpg); ">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="mu-page-header-area">
-						<h1 class="mu-page-header-title">Professional Update</h1>
+
+
+						<h1 class="mu-page-header-title">Gallery</h1>
 					</div>
 				</div>
 			</div>
@@ -144,37 +176,205 @@
 
 	<!-- Start main content -->
 	<main>
-		<!-- Start Blog -->
-		<section id="mu-blog">
+		<!-- Start Services -->
+        <section id="mu-portfolio">
 			<div class="container">
-				<div class="row ">
+				<div class="row">
 					<div class="col-md-12">
-						<div class="mu-blog-area">
+						<div class="mu-portfolio-area">
 							<!-- Title -->
-							<div class="row" id="blog-row">
-
-								<div class="fancy-cards md-12">
-
-									<div class="fancy-card">
-										<div class="top">
-											<div style="padding-top:10px; color:rgb(247, 243, 242);">
-												“Time spent for temporary happiness like movie or outing or weekend on a
-												beach is all synthetic; with shelf life of a day or two. Work for your
-												bigger dreams that should last for whole life. Then movie and beach
-												would seem more interesting, realising that you have done something.
-											</div>
-											<div class="caption">
-												<h3 class="title">My Blog</h3>
-												<a href="" class="button">Read More </a>
-											</div>
-										</div>
-										<div class="middle"></div>
-										<div class="bottom"></div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="mu-title">
+										<h2>Our Media Gallery</h2>
+										<p>Our Leaders taking seminars and Being Honoured at various forums</p>
 									</div>
+								</div>
+							</div>
 
+							<div class="row">
+								<!-- Start Portfolio Filter -->
+								<div class="mu-portfolio-filter-area">
+									<ul class="mu-simplefilter">
+										<!-- <li class="active" data-filter="all">All<span>/</span></li> -->
+										<li data-filter="1" id="click1" style="color: #6fa454" class="active">Awards &
+											Accolades<span>/</span> </li>
+										<li data-filter="2" style="color: #6fa454">JG and Co - Team Offsite 2019</li>
+										<!-- <li data-filter="3">E-commerces<span>/</span></li>
+										<li data-filter="4"> Arts<span>/</span> </li>
+										<li data-filter="5">Branding</li> -->
+									</ul>
 								</div>
 
+								<!-- Start Portfolio Content -->
+								<div class="mu-portfolio-content">
+									<div class="filtr-container">
 
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="1">
+											<a class="mu-imglink" href="assets/images/i1.jpg"
+												title="Seminar at ICAI ,Indore">
+												<img class="img-responsive" src="assets/images/i1.jpg" alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">Seminar at ICAI ,Indore</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a>
+											<br>
+											Seminar at ICAI ,Indore
+										</div>
+
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="1">
+											<a class="mu-imglink" href="assets/images/i2.jpg"
+												title="Seminar on Audits – Narsee Munjee, College">
+												<img class="img-responsive" src="assets/images/i2.jpg" alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">Seminar on Audits – Narsee Monjee
+														Institute of Management Studies</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a><br>
+											Seminar on Audits – Narsee Monjee Institute of Management Studies
+										</div>
+
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="1">
+											<a class="mu-imglink" href="assets/images/i3.jpg" title="Seminar on Audit Reports and Ind
+												AS – TPA, Indore">
+												<img class="img-responsive" src="assets/images/i3.jpg" alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">Seminar on Audit Reports and Ind
+														AS – TPA, Indore</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a>
+											Seminar on Audit Reports and Ind AS – TPA, Indore
+										</div>
+
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="1">
+											<a class="mu-imglink" href="assets/images/i4.jpg" title="Guest Speaker at NR Industrialist
+												Organisation, Indore">
+												<img class="img-responsive" src="assets/images/i4.jpg" alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">Guest Speaker at NR Industrialist
+														Organisation, Indore</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a>
+											Guest Speaker at NR Industrialist Organisation, Indore
+										</div>
+
+										<!-- <div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="2">
+											<a class="mu-imglink" href="assets/images/i5.jpg" title="Achievements">
+												<img class="img-responsive" src="assets/images/i5.jpg" alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">Achievements</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a>
+										</div> -->
+
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="1">
+											<a class="mu-imglink" href="assets/images/teachersday.jpeg"
+												title="Teachers Day At Narsee Monjee Institute of Management Studies, Indore">
+												<img class="img-responsive" src="assets/images/teachersday.jpeg"
+													alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">Teachers Day At Narsee Monjee
+														Institute of Management Studies, Indore</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a>
+											Teachers Day At Narsee Monjee Institute of Management Studies, Indore
+										</div>
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="1">
+											<a class="mu-imglink" href="assets/images/paper.jpeg"
+												title="Newspaper cut out">
+												<img class="img-responsive" src="assets/images/paper1.png" alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">Article in Newspaper on Benefits of
+														New AS to Foreign Investors. </h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a><br>
+											Article in Newspaper on Benefits of New AS to Foreign Investors.
+										</div>
+
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="2">
+											<img class="img-responsive" src="assets/images/jgt4.jpeg" alt="image">
+
+										</div>
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="2">
+											<img class="img-responsive" src="assets/images/jgt6.jpeg" alt="image">
+
+										</div>
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="2">
+											<img class="img-responsive" src="assets/images/jgt1.jpeg" alt="image">
+
+										</div>
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="2">
+											<img class="img-responsive" src="assets/images/jgt2.jpeg" alt="image">
+
+										</div>
+
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="2">
+											<img class="img-responsive" src="assets/images/jgt8.jpeg" alt="image">
+
+										</div>
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="2">
+											<img class="img-responsive" src="assets/images/jgt7.jpeg" alt="image">
+
+										</div>
+
+										<!-- <div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="5">
+											<a class="mu-imglink" href="assets/images/portfolio/img-6.jpg"
+												title="BRANDING">
+												<img class="img-responsive" src="assets/images/portfolio/img-6.jpg"
+													alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">BRANDING</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="3">
+											<a class="mu-imglink" href="assets/images/portfolio/img-7.jpg"
+												title="E-COMMERCE">
+												<img class="img-responsive" src="assets/images/portfolio/img-7.jpg"
+													alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">E-COMMERCE</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="4">
+											<a class="mu-imglink" href="assets/images/portfolio/img-8.jpg"
+												title="PAINTING">
+												<img class="img-responsive" src="assets/images/portfolio/img-8.jpg"
+													alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">PAINTING</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-xs-6 col-sm-6 col-md-4 filtr-item" data-category="1">
+											<a class="mu-imglink" href="assets/images/portfolio/img-4.jpg"
+												title="WEB DESIGN">
+												<img class="img-responsive" src="assets/images/portfolio/img-4.jpg"
+													alt="image">
+												<div class="mu-filter-item-content">
+													<h4 class="mu-filter-item-title">WEB DESIGN</h4>
+													<span class="fa fa-long-arrow-right"></span>
+												</div>
+											</a>
+										</div> -->
+
+									</div>
+								</div>
+								<!-- End Portfolio Content -->
 							</div>
 
 						</div>
@@ -182,7 +382,6 @@
 				</div>
 			</div>
 		</section>
-		<!-- End Blog -->
 
 	</main>
 
@@ -372,11 +571,14 @@
 		</div>
 
 	</footer>
+	
 	<!-- End footer -->
 	<!-- End footer -->
 
 	<!-- JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+	<script type="text/javascript" src="server/services/carrierService.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
 		integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
@@ -403,6 +605,8 @@
 
 	<!-- About us Skills Circle progress  -->
 	<script>
+
+
 		// First circle
 		new Circlebar({
 			element: "#circle-1",
