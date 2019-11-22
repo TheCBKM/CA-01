@@ -316,7 +316,7 @@ a:focus,
 /*--------------------*/
 
 #mu-hero {
-	background-color: #0091ea;
+	background-color: #023e62;
 	display: inline;
 	float: left;
 	width: 100%;
@@ -412,7 +412,7 @@ a:focus,
 .mu-navbar-nav li a:hover,
 .mu-navbar-nav li a:focus {
 	background-color: #fff;
-	color: #0091ea;
+	color: #023e62;
 }
 
 
@@ -429,7 +429,7 @@ a:focus,
 
 .mu-navbar-nav li .dropdown-menu a:hover,
 .mu-navbar-nav li .dropdown-menu a:focus {
-	color: #0091ea;
+	color: #023e62;
 }
 
 
