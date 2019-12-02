@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="server/server.js"></script>
+    <script type="text/javascript" src="server/services/enquiryService.js"></script>
+    <title>Document</title>
+</head>
+
+<body class="bg-dark">
+
+        <center><h1 style="color: floralwhite" class="display-4">Login</h1></center>
+        
+           <div class="container">
+    
+            <div class="form-group">
+                <label style="color: rgb(231, 217, 15); font-size:20px " for="exampleInputEmail1">Username</label>
+                <input type="text" name="username" class="form-control" id="id-admin" aria-describedby="emailHelp"
+                    placeholder="Enter name" required>
+            </div> 
+             <div class="form-group">
+                <label style="color: rgb(231, 217, 15); font-size:20px" for="exampleInputPassword1">Password</label>
+                <input type="password" name="password" class="form-control" id="pass-admin" placeholder="Password" required>
+            </div>
+            <button  onclick="adminLogin()" class="btn btn-success">Login</button>
+        
+        </div>
+    <!-- <input type="text" id="id-admin">
+    <input type="text" id="pass-admin">
+    <button onclick="adminLogin()">Login</button> -->
+
+</body>
+
+</html>
