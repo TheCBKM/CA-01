@@ -3703,3 +3703,12 @@ a:focus,
 	
 }
 
+/* Fonts */
+/* @font-face {
+	font-family: myFirstFont;
+	src: url("myfont.otf") format("opentype");
+} */
+
+#myfont {
+	font-family: CambridgeW01-Regular
+  }
