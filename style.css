@@ -3712,3 +3712,12 @@ a:focus,
 /* #myfont {
 	font-family: CambridgeW01-Regular
   } */
+  #enquiry-form{
+	  width: 30%;
+  }
+
+  @media only screen and (max-width: 900px) {
+	#enquiry-form{
+		width: 90%;
+	}
+  }
